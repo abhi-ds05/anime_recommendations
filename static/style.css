@@ -1,84 +1,107 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* 
+ * Anime Recommendation App Custom Styles
+ * Combines your neon/dark theme with modern CSS.
+ * Plays nicely with Tailwind.
+ */
 
+/* -------------------------------------
+   Global styles
+------------------------------------- */
 body {
   font-family: Arial, sans-serif;
-  background-color: #212025; /* Pitch-black background */
+  background-color: #212025; /* Dark background */
+  color: #fff;
   margin: 0;
   padding: 0;
-  color: #fff; /* Text color to be white */
+  line-height: 1.6;
 }
 
+/* -------------------------------------
+   Container
+------------------------------------- */
 .container {
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
-  background-color: #222; /* Darker background for the container */
-  border: 1px solid #444; /* Darker border color */
-  border-radius: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Slightly darker shadow */
+  background-color: #222; /* Slightly lighter dark */
+  border: 1px solid #444;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
+/* -------------------------------------
+   Typography
+------------------------------------- */
 h1 {
   text-align: center;
-  margin-bottom: 20px;
-  color: #00ffcc; /* Neon green color for the header */
+  margin-bottom: 1.5rem;
+  color: #00ffcc; /* Neon cyan header */
 }
 
+/* -------------------------------------
+   Forms
+------------------------------------- */
 form {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 
 label {
   font-weight: bold;
-  margin-bottom: 5px;
-  width: 240px;
   display: inline-block;
+  margin-bottom: 0.25rem;
 }
 
 select,
 input[type="text"],
 input[type="number"] {
-  padding: 8px;
-  border: 1px solid #666; /* Darker border color */
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  border: 1px solid #666;
+  color: #fff;
   border-radius: 4px;
-  margin-bottom: 10px;
-  background-color: #333; /* Darker background for the inputs */
-  color: #fff; /* Text color to be white */
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
-input[type="text"],
-input[type="number"] {
-  width: 330px;
+select:focus,
+input[type="text"]:focus,
+input[type="number"]:focus {
+  background-color: #444;
+  border-color: #00cc99;
+  outline: none;
 }
 
+/* Submit Button */
 input[type="submit"] {
-  padding: 8px;
-  border: 1px solid #666; /* Darker border color */
+  background-color: #00cc99;
+  color: #000;
+  border: 1px solid #00b386;
+  padding: 10px;
   border-radius: 4px;
-  margin-bottom: 10px;
-  background-color: #00cc99; /* Slightly toned down neon green color for the submit button */
-  color: #000; /* Text color to be black */
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 input[type="submit"]:hover {
-  background-color: #00b386; /* Slightly darker neon green on hover */
+  background-color: #00b386;
 }
 
-/* Hide the user_id_input and anime_id_input divs by default */
+/* Hide user_id & anime_name input blocks by default */
 #user_id_input,
-#anime_id_input {
+#anime_id_input,
+#num_recommendations_input {
   display: none;
 }
 
+/* -------------------------------------
+   Scrollbars
+------------------------------------- */
+/* For Chrome, Edge, Safari */
 ::-webkit-scrollbar {
   width: 10px;
-  border-radius: 12px;
 }
 
 ::-webkit-scrollbar-track {
@@ -89,11 +112,14 @@ input[type="submit"]:hover {
 ::-webkit-scrollbar-thumb {
   background: #00cc99;
   border-radius: 12px;
-  width: 10px;
-  height: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #005472;
-  /* Set the color of the scroll bar thumb on hover */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00cc99 #fff;
 }
