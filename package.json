@@ -1,16 +1,19 @@
 {
   "name": "anime-recommendation-system",
   "version": "1.0.0",
-  "description": "anime recommendation system",
+  "description": "A personalized anime recommendation system with Tailwind CSS for styling.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "start": "echo 'No server start script yet'",
+    "test": "echo 'No tests specified' && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/unreal0901/anime-recommendation-system.git"
   },
-  "author": "",
+  "author": "Kumar Abhishek",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/unreal0901/anime-recommendation-system/issues"

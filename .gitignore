@@ -1,7 +1,6 @@
 *.csv
 *.h5
 
-
 # Python dependencies
 Pipfile
 Pipfile.lock
